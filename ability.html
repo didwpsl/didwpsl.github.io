@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="icon" type="image/png" href="img/star.png" />
+    <script
+      src="https://kit.fontawesome.com/01809a491f.js"
+      crossorigin="anonymous"
+    ></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MY ABILITY</title>
+    <link rel="stylesheet" href="ability.css" />
+    <link rel="stylesheet" href="mainstyle.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="row justify-content-between align-items-center">
+          <div class="logo">
+            <i class="fas fa-star"></i>
+            <a href="index.html">SOYOUNG</a>
+          </div>
+          <input type="checkbox" id="nav-check" />
+          <label for="nav-check" class="nav-toggler">
+            <span></span>
+          </label>
+          <nav class="nav">
+            <ul>
+              <li>
+                <a href="index.html"><b>Home</b></a>
+              </li>
+              <li>
+                <a href="about.html"><b>About</b></a>
+              </li>
+              <li>
+                <a href="interest.html"><b>Interest</b></a>
+              </li>
+              <li>
+                <a href="ability.html"><b>Ability</b></a>
+              </li>
+              <li>
+                <a href="join.html"><b>Join</b></a>
+              </li>
+              <li>
+                <a href="contact.html"><b>Contact</b></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <div class="wrapper image-wrapper">
+      <div class="container inner">
+        <div class="row">
+          <div class="col-md-10 offset-md-1">
+            <h2 id="title-ablitity">ABILITY</h2>
+            <br /><br /><br />
+            <div class="row text-center">
+              <div class="col-lg-3">
+                <div class="progressbar circle blue" data-value="75"></div>
+                <h5>JAVA</h5>
+              </div>
+
+              <div class="col-lg-3">
+                <div class="progressbar circle green" data-value="80"></div>
+                <h5>HTML&CSS</h5>
+              </div>
+
+              <div class="col-lg-3">
+                <div class="progressbar circle red" data-value="100"></div>
+                <h5>JAVA SCRIPT</h5>
+              </div>
+
+              <div class="col-lg-3">
+                <div class="progressbar circle yellow" data-value="80"></div>
+                <h5>SQL</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section id="work" class="section">
+      <div class="section__container">
+        <h1 id="titlemywork">My work</h1>
+        <div class="work__categories">
+          <button class="category__btn selected" data-filter="*">
+            All <span class="category__count">8</span>
+          </button>
+          <button class="category__btn" data-filter="JAVA SCRIPT">
+            JAVA SCRIPT <span class="category__count">4</span>
+          </button>
+          <button class="category__btn" data-filter="JAVA">
+            JAVA<span class="category__count">3</span>
+          </button>
+          <button class="category__btn" data-filter="GROUP PROJECT">
+            GROUP PROJECT <span class="category__count">1</span>
+          </button>
+        </div>
+        <div class="work__projects">
+          <a href="" class="project" target="blank" data-type="JAVA SCRIPT">
+            <img src="img/pshop.gif" alt="miniProject" class="project__img" />
+            <div class="project__description">
+              <h3>SHOPPING LIST</h3>
+              <span>You can simply sort clothes by what you want</span>
+            </div>
+          </a>
+          <a
+            href="https://github.com/dream-ellie/responsive-nav-bar"
+            class="project"
+            data-type="JAVA SCRIPT"
+            target="blank"
+          >
+            <img class="project" src="img/pcheck.gif" alt="navbar" />
+            <div class="project__description">
+              <h3>To-Do List</h3>
+              <span
+                >Make a list that you have to and check it when you've done
+                it</span
+              >
+            </div>
+          </a>
+          <a
+            href="https://github.com/dream-ellie/responsive-nav-bar"
+            class="project"
+            data-type="JAVA"
+            target="blank"
+          >
+            <img class="project__img" src="img/pbank.gif" alt="navbar" />
+            <div class="project__description">
+              <h3>BANK SYSTEM</h3>
+              <span>Can sign up clients, deposit and withdraw money</span>
+            </div>
+          </a>
+          <a href="" class="project" data-type="JAVA">
+            <img class="project__img" src="img/pip.gif" alt="" />
+            <div class="project__description">
+              <h3>IP FINDER</h3>
+              <span>Put an url link and get an IP adress of it</span>
+            </div>
+          </a>
+          <a href="" class="project" data-type="JAVA">
+            <img class="project__img" src="img/pword.gif" alt="" />
+            <div class="project__description">
+              <h3>WORD COUNTER</h3>
+              <span>Can check how many words you wrote</span>
+            </div>
+          </a>
+          <a href="" class="project" data-type="JAVA">
+            <img class="project__img" src="img/pguess.gif" alt="" />
+            <div class="project__description">
+              <h3>Guess My number</h3>
+              <span
+                >You can guess the number and can check it's correct or
+                not</span
+              >
+            </div>
+          </a>
+          <a href="" class="project" data-type="KH">
+            <img class="project__img" src="img/pmovie.gif" alt="" />
+            <div class="project__description">
+              <h3>MOVIE BOOKING</h3>
+              <span>Can book movie seat</span>
+            </div>
+          </a>
+          <a href="" class="project" data-type="KH">
+            <img class="project__img" src="img/pamuse.gif" alt="" />
+            <div class="project__description">
+              <h3>AMUSEMENT PARK</h3>
+              <span>My first group project using JAVA</span>
+              <span>with 유법용, 김미래, 한태우</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+
+    <script src="progressbar.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        "use strict";
+
+        var $pline = $(".progressbar.line");
+        var $pcircle = $(".progressbar.circle");
+        $pline.each(function (i) {
+          var line = new ProgressBar.Line(this, {
+            strokeWidth: 6,
+            trailWidth: 6,
+            duration: 3000,
+            easing: "easeInOut",
+            text: {
+              style: {
+                color: "inherit",
+                position: "absolute",
+                right: "0",
+                top: "-30px",
+                padding: 0,
+                margin: 0,
+                transform: null,
+              },
+              autoStyleContainer: false,
+            },
+            step: function (state, line, attachment) {
+              line.setText(Math.round(line.value() * 100) + " %");
+            },
+          });
+          var value = $(this).attr("data-value") / 100;
+          $pline.waypoint(
+            function () {
+              line.animate(value);
+            },
+            {
+              offset: "100%",
+            }
+          );
+        });
+        $pcircle.each(function (i) {
+          var circle = new ProgressBar.SemiCircle(this, {
+            strokeWidth: 5,
+            trailWidth: 5,
+            duration: 2000,
+            easing: "easeInOut",
+            step: function (state, circle, attachment) {
+              circle.setText(Math.round(circle.value() * 100));
+            },
+          });
+          var value = $(this).attr("data-value") / 100;
+          $pcircle.waypoint(
+            function () {
+              circle.animate(value);
+            },
+            {
+              offset: "100%",
+            }
+          );
+        });
+
+        $(".counter .value").counterUp({
+          delay: 50,
+          time: 1000,
+        });
+
+        $(".countdown").countdown();
+      });
+    </script>
+  </body>
+</html>
