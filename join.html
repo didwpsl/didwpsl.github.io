@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/01809a491f.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="jquery-3.6.0.js"></script>
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JOIN</title>
+    <link rel="stylesheet" href="join.css" />
+    <link rel="stylesheet" href="mainstyle.css" />
+    <link rel="icon" type="image/png" href="img/star.png" />
+  </head>
+  <body>
+    <header class="header"></header>
+      <body>    
+        <form id="saveMember" action="javascript:saveMember();" name="saveMemberFrm">
+          <table id="tb-memberlist">
+            <thead>
+            <tr>
+              <th><label for="username">NAME</label></th>
+              <td>
+                <input type="text" name="username" id="username" required />
+              </td>
+            </tr>
+            <tr>
+              <th><label for="content">EMAIL</label></th>
+              <td><input type="email" name="email" id="email" required/></td>
+            </tr>
+            <tr>
+              <th><label for="password">PASSWORD</label></th>
+              <td><input type="password" name="password" id="password" required /></td>
+            </tr>
+            <tr>
+              <th><label for="password check">CHECK PASSWORD</label></th>
+              <td><input type="password" name="password check" id="passwordCheck" required/></td>
+            </tr>
+            <tr>
+              <th><label for="route">HOW DID YOU FIND MY WEBSITE?</label></th>
+              <td>
+                <input type="text" name="route" id="route" />
+              </td>
+            </tr>
+          </thead>
+          <tbody></tbody>
+            <tfoot>
+              <tr>
+                <td colspan="2" style="text-align: center">
+                  <button id="btn" type="submit">SUBMIT</button>
+                </td>
+              </tr>
+            </tfoot>
+            </table>
+        </form>
+      
+        
+        <script>
+          
+    //Date
+    const formatDatetime = (millis) => {
+                const d = new Date(millis);
+                const f = (n) => (n >= 10 ? n : "0" + n);
+                return `${d.getFullYear()}/${f(d.getMonth() + 1)}/${f(
+                d.getDate()
+            )} ${f(d.getHours())}:${f(d.getMinutes())}`;
+            };
+
+            //회원 가입 
+            const saveMember = () => {
+                console.log('savemember')
+                const $username = $(username);
+                const $email = $(email);
+                const $password = $(password);
+                const $passwordCheck = $(passwordCheck);
+                const $route = $(route);
+
+                if ($username.val() == "" || $email.val() == "" || $password.val() == "" || $route.val() == "")
+                    return;
+
+                // 1. 사용자입력값을 Guestbook객체생성
+                const ml = new Savemember($username.val(), $email.val(), $password.val(), $route.val());
+
+                // 2. localStorage에 추가 : 배열로 관리
+                const savemember = JSON.parse(localStorage.getItem("savemember")) || [];
+                savemember.push(ml);
+
+                console.log(savemember);
+
+                localStorage.setItem("savemember", JSON.stringify(savemember));
+                $username.val("");
+                $email.val("");
+                $password.val("");
+                $passwordCheck.val("");
+                $route.val("");
+            };
+
+            class Savemember {
+                constructor(username, email, password, route) {
+                    this.username = username;
+                    this.email = email;
+                    this.password = password;
+                    this.route = route;
+                    this.datetime = Date.now(); // unix time 밀리초
+                };
+              
+            }
+           
+
+            //유효성 검사 
+            const saveFrm = document.querySelector("#saveMember")
+
+            saveFrm.onsubmit = function () {
+                var pwd = document.getElementById("password");
+                var pwdCheck = document.getElementById("passwordCheck");
+                var userName = document.getElementById("username");
+                var email = document.getElementById("email");
+
+
+                //비밀번호 확인 
+             
+
+                var regExpArr = [/^.{8,15}$/, /\d/, /[a-zA-Z]/, /[\*!&]/];
+
+                for (let i = 0; i < regExpArr.length; i++) {
+                    if (!regExpTest(regExpArr[i], pwd, "비밀번호는 8~15자리 숫자/문자/특수문자를 포함해야합니다.")) {
+                        return false;
+                    }
+                }
+
+                //비밀번호일치여부
+                if (pwd.value == pwdCheck.value) {
+                    return true;
+                } else {
+                    alert("비밀번호가 일치하지 않습니다.");
+                    pwd.select();
+                    return false;
+                }
+
+                //3.이름검사
+              
+                var regExp3 = /^[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]{2,}$/;
+            }
+
+            function isEqualPwd() {
+                if (pwd.value == pwdCheck.value) {
+                    
+                    return true;
+                } else {
+                    alert("비밀번호가 일치하지 않습니다.");
+                    pwd.select();
+                    return false;
+                }
+            }
+
+            function regExpTest(regExp, el, msg) {
+                if (regExp.test(el.value))
+                    return true;
+                //적합한 문자열이 아닌 경우
+                alert(msg);
+                el.value = "";
+                el.focus();
+                return false;
+            }
+
+            document.querySelector("#login-form button").addEventListener('click', function (e) {
+                event.preventDefault();
+                const userName = document.querySelector('#login-name').value;
+                const members = JSON.parse(localStorage.getItem("savemember"));
+                let arr = [];
+
+                for(let j = 0; j < members.length; j++){
+                    if(userName == members[j].username){
+                        arr.push(userName);
+                    }
+                }
+
+             
+                
+    }
+    
+    )
+    
+          
+        </script>
+     
+        <script>
+            $(document).ready(function () {
+                $("header").load("header.html");
+            });
+
+        </script>
+    
+      </body>
+    </html>
+  </body>
+</html>

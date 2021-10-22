@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://kit.fontawesome.com/01809a491f.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="img/star.png"/>
+    <title>CONTACT ME</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
+    />
+    <link rel="stylesheet" href="contact.css" />
+    <link rel="stylesheet" href="mainstyle.css" />
+   
+    <script src="jquery-3.6.0.js"></script>
+  </head>
+  <body>
+ <header></header>
+    <div class="card">
+      <div class="card-image">
+        <img src="/img/profile.png" alt="" />
+      </div>
+      <ul class="social-icons">
+        <li>
+          <a href="https://www.facebook.com/profile.php?id=100003658981504" target="_blank">
+            <i class="fab fa-facebook"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/yjpzsy/" target="_blank">
+           <i class="fab fa-instagram"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://open.kakao.com/o/seTKxBDd" target="_blank">
+            <i class="fas fa-comment-dots"></i>
+          </a>
+        </li>
+        <li>
+          <a href="mailto:ysy183469@gmail.com" target="_blank">
+            <i class="fas fa-at"></i>
+          </a>
+        </li>
+      </ul>
+      <div class="details">
+        <h2>SOYOUNG YANG</h2>
+        <span class="job-title"><b>SOFTWARE ENGINEER</b></span>
+        
+      </div>
+    </div>
+    <div class=message>
+        <h1>Have any questions?</h1>
+        <h2>Send me a message</h2>
+    <form action="javascript:saveGuestbook();" method="guestbookFrm">
+        <table class="message-form" >
+            <tr>
+          <th><label for="username"><b>email</b> </label></th>
+          <td><input id="username" type="email" name="username" required/></td>
+        </tr>
+        <br>
+        <tr>
+        <th><label for="content">message </label></th>
+        <td> <textarea name="content" cols="50" rows="15" id="content" required></textarea></td></tr>
+        <br><br>
+            <tr>
+          <td><th><input id="submit" value=SEND type="submit"></input></th></td>
+        </tr>
+    </table>
+    </form>
+    <div class="back-card" type="box" id="backcard">
+    </div>
+    </div>
+    <a style ="display:scroll;position:fixed;bottom:15px;right:15px;" title=master href="password.html">
+        <i class="fas fa-crown"></i>
+       <script src="sweetalert2.all.min.js"></script>
+
+       <script>
+   const formatDatetime = (millis) => {
+    const d = new Date(millis);
+    const f = (n) => n >= 10 ? n : "0" + n;
+    return `${d.getFullYear()}/${f(d.getMonth() + 1)}/${f(d.getDate())} ${f(d.getHours())}:${f(d.getMinutes())}`;
+  };
+
+  const saveGuestbook = () => {
+    const $username = $(username);
+    const $content = $(content);
+
+    if($username.val() == ""  || $content.val() == "")
+    return;
+     
+
+    
+    const gb = new Guestbook($username.val(), $content.val());
+
+    
+    const guestbooks = JSON.parse(localStorage.getItem("guestbooks")) || [];
+    guestbooks.push(gb);
+
+    console.log(guestbooks);
+
+    localStorage.setItem("guestbooks", JSON.stringify(guestbooks));
+
+  
+    $username.val('');
+    $content.val('');
+
+    Swal.fire({
+        icon: "success",
+        title: "SUCCESSFULLY SUBMITTED!😃",
+        text: "I'll get back to you ASAP",
+        type: "success"
+    })
+    .then(function () {
+      window.location = "index.html";
+    });
+       
+
+  };
+
+  class Guestbook {
+    constructor(username, content){
+      this.username = username;
+      this.content = content;
+      this.datetime = Date.now(); 
+    }
+  }
+  </script>
+  		<script>
+        $(document).ready(function () {
+          $("header").load("header.html");
+        });
+        </script>
+  </body>
+</html>

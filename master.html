@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="mainstyle.css" />
+    <link rel="stylesheet" href="master.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HELLO MASTER!</title>
+    <script
+      src="https://kit.fontawesome.com/01809a491f.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="icon" type="image/png" href="img/star.png" />
+  </head>
+
+  <body onload="displayMember(), displayGuestbook()">
+    <header class="header"></header>
+    <div id="main">
+      <div class="head">
+        <h1 class="title">REPORT</h1>
+        <div class="clearfix"></div>
+        <div class="col-div-4-1">
+          <div class="box">
+            <p class="head-1">MEMBER</p>
+            <p class="number" id="mnumber"></p>
+            <i class="fas fa-users box-icon"></i>
+          </div>
+        </div>
+        <div class="col-div-4-1">
+          <div class="box">
+            <p class="head-1">VISITOR</p>
+            <p class="number" id="vnumber"></p>
+            <i class="fas fa-door-open box-icon"></i>
+          </div>
+        </div>
+        <div class="col-div-4-1">
+          <div class="box">
+            <p class="head-1">MESSAGE</p>
+            <p class="number" id="qnumber"></p>
+            <i class="fas fa-envelope-open-text box-icon"></i>
+          </div>
+        </div>
+
+        <div class="clearfix"></div>
+        <br />
+        <div class="col-div-12">
+          <div class="box-8">
+            <div class="content-box">
+              <h1>MESSAGE</h1>
+              <br />
+              <table id="tb-guestbook">
+                <thead>
+                  <tr>
+                    <th>number</th>
+                    <th>email</th>
+                    <th>content</th>
+                    <th>date</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+      <br />
+      <div class="col-div-12">
+        <div class="box-8">
+          <div class="content-box">
+            <h1>MEMBER LIST</h1>
+            <br />
+            <table id="tb-memberlist">
+              <thead>
+                <tr>
+                  <th>number</th>
+                  <th>name</th>
+                  <th>email</th>
+                  <th>password</th>
+                  <th>route</th>
+                  <th>date</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function hiMaster() {
+        Swal.fire("HELLO MASTER 😘💗");
+      }
+    </script>
+    <script>
+      function messageCheck() {
+        promt("");
+      }
+    </script>
+    <script>
+      // 회원 수, 방문자 수, 메세지 수
+      document.querySelector("#qnumber").textContent = Object.keys(
+        JSON.parse(localStorage.getItem("guestbooks"))
+      ).length;
+      document.querySelector("#mnumber").textContent = Object.keys(
+        JSON.parse(localStorage.getItem("savemember"))
+      ).length;
+
+      const countEl = document.getElementById("vnumber");
+
+      updateVisitCount();
+
+      function updateVisitCount() {
+        fetch("https://api.countapi.xyz/update/soyoung/homepage/?amount=1")
+          .then((res) => res.json())
+          .then((res) => {
+            countEl.innerHTML = res.value;
+          });
+      }
+
+      // 메세지 조회
+      const displayGuestbook = () => {
+        const guestbooks = JSON.parse(localStorage.getItem("guestbooks"));
+        guestbooks.reverse(); // 원본배열
+        console.log(guestbooks);
+
+        const $tbody = $("#tb-guestbook tbody");
+        $tbody.empty();
+        $.each(guestbooks, (i, { username, content, datetime }) => {
+          $tbody.append(`<tr>
+      <td>${i + 1}</td>
+      <td><a href="mailto:${username}" target="_blank">${username}</td>
+      <td>${content}</td>
+      <td>${formatDatetime(datetime)}</td>
+
+    </tr>`);
+        });
+      };
+
+      // 회원 조회
+
+      const displayMember = () => {
+        const savemember = JSON.parse(localStorage.getItem("savemember"));
+        savemember.reverse(); // 원본배열
+        console.log(savemember);
+
+        const $tbody = $("#tb-memberlist tbody");
+        $tbody.empty();
+        $.each(
+          savemember,
+          (i, { username, email, password, route, datetime }) => {
+            $tbody.append(`<tr>
+      <td>${i + 1}</td>
+      <td>${username}</td>
+      <td>${email}</td>
+      <td>${password}</td>
+      <td>${route}</td>
+      <td>${formatDatetime(datetime)}</td>
+    </tr>`);
+          }
+        );
+      };
+
+      // Date
+      const formatDatetime = (millis) => {
+        const d = new Date(millis);
+        const f = (n) => (n >= 10 ? n : "0" + n);
+        return `${d.getFullYear()}/${f(d.getMonth() + 1)}/${f(d.getDate())} ${f(
+          d.getHours()
+        )}:${f(d.getMinutes())}`;
+      };
+    </script>
+    <script src="jquery-3.6.0.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("header").load("header.html");
+      });
+    </script>
+  </body>
+</html>

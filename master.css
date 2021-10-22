@@ -1,0 +1,95 @@
+a {
+  color: var(--color-white);
+}
+
+.clearfix {
+  clear: both;
+}
+#main {
+  margin-top: 100px;
+  padding: 16px;
+  text-align: center;
+  color: white;
+}
+
+.col-div-4-1 {
+  margin-top: 50px;
+  width: 33.3%;
+  float: left;
+}
+.box {
+  width: 80%;
+  height: 130px;
+  margin-left: 50px;
+  padding: 10px;
+  box-shadow: 2px 5px 10px #ddd;
+  position: relative;
+}
+.box p {
+  font-weight: 500;
+  padding-left: 10px;
+}
+.number {
+  font-size: 35px;
+  margin-bottom: 0px;
+  margin-top: 20px;
+}
+
+.box-icon {
+  color: #5643ff;
+  padding-right: 10px;
+  background-color: #efeff5;
+  padding: 15px;
+  border-radius: 25px;
+  position: absolute;
+  right: 16px;
+  top: -18px;
+}
+
+.content-box-1 {
+  padding: 0px 10px;
+}
+.col-div-12 {
+  margin: 50px;
+  width: 90%;
+}
+
+.col-div-4 {
+  width: 30%;
+  float: left;
+}
+.content-box {
+  padding: 20px;
+  color: white;
+}
+.content-box p {
+  margin: 50px;
+  font-size: 20px;
+}
+.content-box p span {
+  float: right;
+  background-color: #5643ff;
+
+  padding: 3px 10px;
+  font-size: 15px;
+}
+
+.box-8 {
+  margin-left: 10px;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+
+  padding: 10px;
+}
+
+tr:nth-child(even) {
+  background-color: #5643ff29;
+}

@@ -1,236 +1,130 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ABOUT ME</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
     <script
-      src="https://kit.fontawesome.com/01809a491f.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="about.css" />
+    src="https://kit.fontawesome.com/01809a491f.js"
+    crossorigin="anonymous"
+  ></script>
+    <title>ABOUT ME</title>
     <link rel="stylesheet" href="mainstyle.css" />
+    <link rel="stylesheet" href="about.css" />
   </head>
-  <div>
-    <header class="header">
-      <div class="container">
-        <div class="row justify-content-between align-items-center">
-          <div class="logo">
-            <i class="fas fa-star"></i>
-            <a href="index.html">SOYOUNG</a>
-          </div>
-          <input type="checkbox" id="nav-check" />
-          <label for="nav-check" class="nav-toggler">
-            <span></span>
-          </label>
-          <nav class="nav">
-            <ul>
-              <li>
-                <a href="index.html"><b>Home</b></a>
-              </li>
-              <li>
-                <a href="about.html"><b>About</b></a>
-              </li>
-              <li>
-                <a href="interest.html"><b>Interest</b></a>
-              </li>
-              <li>
-                <a href="ability.html"><b>Ability</b></a>
-              </li>
-              <li>
-                <a href="join.html"><b>Join</b></a>
-              </li>
-              <li>
-                <a href="contact.html"><b>Contact</b></a>
-              </li>
-            </ul>
-          </nav>
+  <body>
+ <header></header>
+ <h1 style="color:white;">JOURNEYOF MY LIFE</h1>
+      <div class="global-width">
+      </div>
+    <section class="scroll-content">
+      <div class="scroll-graphic">
+        <div data-index="0" class="graphic-item" id="main">
+          <img class="scene-img" src="img/00.png" alt="" />
+        </div>
+        <div class="graphic-item">
+          <img class="scene-img" src="img/02.png" alt="" />
+        </div>
+        <div class="graphic-item">
+          <img class="scene-img" src="img/01.gif" alt="" />
+        </div>
+        <div class="graphic-item">
+          <img class="scene-img" src="img/03.gif" alt="" />
+        </div>
+        <div class="graphic-item">
+          <img class="scene-img" src="img/04.gif" alt="" />
+        </div>
+        <div class="graphic-item" >
+          <img class="scene-img" src="img/05.png" alt="" />
+        </div>
+        <div class="graphic-item">
+          <img class="scene-img" src="img/06.gif" alt="" />
+        </div>
+        <div class="graphic-item">
+          <img class="scene-img" src="img/07.png" alt="" />
+        </div>
+        <div class="graphic-item">
+          <img class="scene-img" src="img/08.jpg" alt="" />
+        </div>
+        <div class="graphic-item">
+          <img class="scene-img" src="img/last.jpg" alt="" />
         </div>
       </div>
-    </header>
-    <div class="timeline-container" id="timeline-1">
-      <div class="timeline-header">
-        <h2 class="timeline-header__title">LET ME INTRODUCE MYSELF</h2>
-        <h3 class="timeline-header__subtitle">JOURNEY OF MY LIFE</h3>
-      </div>
-      <div class="timeline">
-        <div class="timeline-item" data-text="NEW TIMELINE DESIGN">
-          <div class="timeline__content">
-            <img class="timeline__img" src="hu.jpg" />
-            <img class="timeline__img2" src="images/00.gif" />
-            <h2 class="timeline__content-title">CHILDHOOD</h2>
-            <p class="timeline__content-desc">
-              He was born in 1881 (probably in the spring) in Salonica, then an
-              Ottoman city, now inGreece. His father Ali Riza, a customs
-              official turned lumber merchant, died when Mustafawas still a boy.
-              His mother Zubeyde, adevout and strong-willed woman, raised him
-              and his sister.
-            </p>
-          </div>
+      <div class="scroll-text global-width">
+        <div class="step">
+          <p>
+            컴퓨터를 좋아하는 아버지의 영향으로 유치원때부터 컴퓨터를 만지면서 자랐습니다.
+              제가 사라지면 부모님은 동네 피씨방과 오락실을 뒤질 정도로 밖에서 뛰어노는 것보다 
+              게임과 책을 좋아했습니다.
+              평범하게 회사를 다니던 어느 날 다른 사람들처럼 토익이나 준비하자는 생각을 했습니다 </b>
+          </p>
         </div>
-        <div class="timeline-item" data-text="NEW TIMELINE DESIGN">
-          <div class="timeline__content">
-            <img class="timeline__img" src="r.jpg" />
-            <h2 class="timeline__content-title">BORING LIFE</h2>
-            <p class="timeline__content-desc">
-              First enrolled in a traditionalreligious school, he soon switched
-              to a modern school. In 1893, he entered a military highschool
-              where his mathematics teacher gave him the second name Kemal
-              (meaning perfection)in recognition of young Mustafa's superior
-              achievement.
-            </p>
-          </div>
+        <div class="step">
+          <p>  영포자였던 저는 기초반에 등록했습니다.
+			선생님은 영어를 배울건지 토익을 배울건지 물었습니다. 
+			'토익 점수는 금방 올려줄 수 있어.
+			그런데 내가 장담할게. 영어를 배우면 너의 세계가 바뀔거야.
+			너는 지금 어린시절의 네가 바랐던 인생을 살고 있니? 인생은 길어'
+			생각이 많아진 저는 그 날 회사를 관뒀습니다 </p>
         </div>
-        <div class="timeline-item" data-text="NEW TIMELINE DESIGN">
-          <div class="timeline__content">
-            <img class="timeline__img" src="y.jpg" />
-            <h2 class="timeline__content-title">LEAVE KOREA</h2>
-            <p class="timeline__content-desc">
-              In 1905, Mustafa Kemal graduated from the War Academy in Istanbul
-              with the rank of Staff Captain. Posted in Damascus, he started
-              with several colleagues, a clandestinesociety called "Homeland and
-              Freedom" to fight against the Sultan'sdespotism.
-            </p>
-          </div>
+        <div class="step">
+          <p>
+            저는 퇴직금으로 필리핀 어학 연수 등록을 했습니다 
+              당시 제게 필리핀은 그저 잠깐 영어때문에 가는 곳 그 이상 그 이하도 아니었다. 그러나 그 곳에서
+              너무 좋은 사람들을 만나고 소소함에서 행복을 느끼는 현지인들을 보며 많은 것을 배우고 느꼈습니다
+              매일 매일이 행복해서 시간이 흐르는게 아쉽다는 생각을 했습니다
+          </p>
         </div>
-        <div class="timeline-item" data-text="NEW TIMELINE DESIGN">
-          <div class="timeline__content">
-            <img
-              class="timeline__img"
-              src="adventure-backpack-beach-214575.jpg"
-            />
-            <h2 class="timeline__content-title">HELLO AUSTRALIA</h2>
-            <p class="timeline__content-desc">
-              In 1908 he helped the group of officers who toppled the Sultan.
-              Mustafa Kemal'scareer flourished as he won his heroism in the far
-              corners of the Ottoman Empire,including Albania and Tripoli. He
-              also briefly served as a staff officer in Salonica andIstanbul and
-              as a military attache in Sofia.
-            </p>
-          </div>
+        <div class="step">
+          <p> 설레임 반과 두려움 반을 안고 캐리어 하나를 끌고 호주 공항 게이트를 나서던 날이 아직도 생생합니다. 
+			모든 일이 쉽게 풀리지는 않았지만 그 과정들을 통해 실패해도 일어서는 법을 배웠습니다. 
+			다양한 국적의 사람들과 5성급 호텔 서버, 지질화학 실험실, 카페 등 한국에서는 해본적도 없는 일들을 하며 
+			한국에서는 벌어보지 못한 돈을 벌었습니다. </p>
         </div>
-        <div class="timeline-item" data-text="NEW TIMELINE DESIGN">
-          <div class="timeline__content">
-            <img
-              class="timeline__img"
-              src="azadeh-oveisi-1439715-unsplash.jpg"
-            />
-            <h2 class="timeline__content-title">VARIOUS EXPERIENCE</h2>
-            <p class="timeline__content-desc">
-              In 1915, when Dardanelles campaign was launched, Colonel Mustafa
-              Kemal became anational hero by winning successive victories and
-              finally repelling the invaders.
-            </p>
-          </div>
+        <div class="step">
+          <p>어릴때부터 외국에서 공부를 해보고 싶었던 저는 더 배워보자는
+			생각에 어학원에 등록을 했습니다. 떨렸던 어학원 클래스 배정 인터뷰에서 저는 제일 높은 반을 배정받았습니다 
+			불과 2년전에 영어로 동사 명사 구분도 못하던 제가 대학을 다니는 유학생들과 영어로 수업을 듣게되었습니다
+			이 곳에서도 좋은 선생님과 친구들을 만나 정말 행복한 시간을 보냈습니다 </p>
         </div>
-        <div class="timeline-item" data-text="NEW TIMELINE DESIGN">
-          <div class="timeline__content">
-            <img class="timeline__img" src="ui.jpg" />
-            <h2 class="timeline__content-title">EXPAND MY WORLD</h2>
-            <p class="timeline__content-desc">
-              Promotedto general in 1916, at age 35, he liberated two major
-              provinces in eastern Turkey thatyear. In the next two years, he
-              served as commander of several Ottoman armies inPalestine, Aleppo,
-              and elsewhere, achieving another major victory by stopping the
-              enemyadvance at Aleppo.
-            </p>
-          </div>
+        <div class="step">
+          <p>
+            호주 생활이 끝나고 한국으로 돌아가기 아쉬워 배낭 여행을 했습니다. 흔한 곳이 아닌 잘 알려지지 않은 곳들 위주로 다니며 
+              현지인들과 그 곳의 문화들을 체험하고 많은 것들을 배우고 느낄 수 있는 시간이었습니다.
+          </p>
         </div>
-        <div class="timeline-item" data-text="NEW TIMELINE DESIGN">
-          <div class="timeline__content">
-            <img class="timeline__img" src="uy.jpg" />
-            <h2 class="timeline__content-title">COVID-19 IN JAPAN</h2>
-            <p class="timeline__content-desc">
-              On May 19, 1919, Mustafa Kemal Pasha landed in the Black Sea port
-              of Samsun to startthe War of Independence. In defiance of the
-              Sultan's government, he rallied a liberationarmy in Anatolia and
-              convened the Congress of Erzurum and Sivas which established
-              thebasis for the new national effort under his leadership.
-            </p>
-          </div>
+        <div class="step">
+          <p>
+			코로나의 시작과 함께 일본으로 떠났습니다. 당시에는 코로나가 금방 끝날것으로 예상하고 출국했지만 일본 생활 내내 코로나와 함께했습니다
+			오자마자 바로 락다운이 실행이 됐으며 처음에는 착잡함 뿐이었지만 어떻게든 길을 찾아 일본 생활 또한 즐겁게 마무리 하고 왔습니다. 
+          </p>
         </div>
-        <div class="timeline-item" data-text="NEW TIMELINE DESIGN">
-          <div class="timeline__content">
-            <img class="timeline__img" src="ju.jpg" />
-            <h2 class="timeline__content-title">BACK TO KOREA</h2>
-            <p class="timeline__content-desc">
-              On April 23, 1920, the GrandNational Assembly was inaugurated.
-              Mustafa Kemal Pasha was elected to its Presidency. Fighting on
-              many fronts, he led his forces to victory against rebels and
-              invadingarmies. Following the Turkish triumph at the two major
-              battles at Inonu in Western Turkey,the Grand National Assembly
-              conferred on Mustafa Kemal Pasha the title ofCommander-in-Chief
-              with the rank of Marshal.
-            </p>
-          </div>
+        <div class="step">
+          <p>
+			원래는 미국으로 대학을 다시 갈지 영국에서 취업을 할지 고민이었습니다. 그러나 예기치 못한 코로나의 장기전으로 
+			어렵게 되어서 한국으로 돌아오게 되었습니다. 그러다 컴퓨터를 좋아하니까 개발을 한번 해보는게 어떠냐는 
+			개발자인 형부와 서버 관리자인 사촌 오빠의 추천으로 KH 국비 과정에 등록하여 현재는 개발 공부를 하고 있습니다. 
+          </p>
         </div>
-        <div class="timeline-item" data-text="NEW TIMELINE DESIGN">
-          <div class="timeline__content">
-            <img class="timeline__img" src="kk.jpg" />
-            <h2 class="timeline__content-title">KEEP CHALLENGE</h2>
-            <p class="timeline__content-desc">
-              At the end of August 1922, the Turkish armieswon their ultimate
-              victory. Within a few weeks, the Turkish mainland was
-              completelyliberated, the armistice signed, and the rule of the
-              Ottoman dynasty abolished
-            </p>
-          </div>
+        <div class="step">
+          <p>
+            새로운 것을 배우고 마주하는 것을 좋아하는 저에게 배워만두면 어디서든 할 수 있고 계속 새로운 것들이 나오는 
+              개발이라는 분야는 매력적인 분야입니다. 
+              도전하는데 겁이 없고 망설임이 없는 저의 장점을 살려 앞으로도 계속 새로운 것을 찾아 시도하며 발전해가고 싶습니다.
+          </p>
         </div>
       </div>
-    </div>
-  
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script>
-      (function ($) {
-        $.fn.timeline = function () {
-          var selectors = {
-            id: $(this),
-            item: $(this).find(".timeline-item"),
-            activeClass: "timeline-item--active",
-            img: ".timeline__img2",
-          };
-          selectors.item.eq(0).addClass(selectors.activeClass);
-          selectors.id.css(
-            "background-image",
-            "url(" +
-              selectors.item.first().find(selectors.img).attr("src") +
-              ")"
-          );
-          var itemLength = selectors.item.length;
-          $(window).scroll(function () {
-            var max, min;
-            var pos = $(this).scrollTop();
-            selectors.item.each(function (i) {
-              min = $(this).offset().top;
-              max = $(this).height() + $(this).offset().top;
-              var that = $(this);
-              if (i == itemLength - 2 && pos > min + $(this).height() / 3) {
-                selectors.item.removeClass(selectors.activeClass);
-                selectors.id.css(
-                  "background-image",
-                  "url(" +
-                    selectors.item.last().find(selectors.img).attr("src") +
-                    ")"
-                );
-                selectors.item.last().addClass(selectors.activeClass);
-              } else if (pos <= max - 10 && pos >= min / 1.1) {
-                selectors.id.css(
-                  "background-image",
-                  "url(" + $(this).find(selectors.img).attr("src") + ")"
-                );
-                selectors.item.removeClass(selectors.activeClass);
-                $(this).addClass(selectors.activeClass);
-              }
-            });
-          });
-        };
-      })(jQuery);
+    </section>
 
-      $("#timeline-1").timeline();
+<a style ="display:scroll;position:fixed;bottom:15px;right:15px;" href="#" title=Top>
+  <i class="fas fa-arrow-up"></i></a>
+  
+  
+    <script>
+      $(document).ready(function () {
+        $("header").load("header.html");
+      });
     </script>
+    <script src="about.js"></script>
   </body>
 </html>
